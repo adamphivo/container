@@ -6,4 +6,5 @@
 
 ## TO DO
 
-[ ] - Create mocking classes to test the container.
+[ ] - Use Class Reflection
+[ ] - Auto-discovery of classes files
