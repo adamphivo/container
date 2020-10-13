@@ -20,6 +20,7 @@ $container->register('MessageProducer', function($container) {
 $producer = $container->get('MessageProducer');
 $reader = $container->get('MessageReader');
 
+// Mock messages to test App
 $producer->makeMessage("Premier", "ENG", 1);
 $producer->makeMessage("Deuxieme", "ENG", 1);
 $producer->makeMessage("Troisieme, zut", "ENG", 1);
