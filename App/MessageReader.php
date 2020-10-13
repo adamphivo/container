@@ -8,16 +8,19 @@ class MessageReader {
     }
 
     public function treatTopMessage() {
+        // We move the pointer to the top of the queue
         $this->queue->rewind();
 
+        // We check for message validity
         if($this->isMessageStored()  && $this->isMessageDateValid() &&
            $this->isMessageContentValid()) {
             echo $this->queue->current()->text."\n";
             echo $this->queue->current()->language."\n";
         } else {
-            echo "Message non valide";
+            echo "Message non valide\n";
         }
 
+        // Once the message is treated, we can delete it 
         $this->storage->detach($this->queue->current());
         $this->queue->dequeue();
     }
